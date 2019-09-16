@@ -122,7 +122,7 @@ def writeout(cmt_table):
     subreddit text, comment_id text, comment_author text, comment_body text, comment_created int)''')
     for cmt_row in cmt_table:
         c.execute('''INSERT INTO comments VALUES(?,?,?,?,?,?,?)''', tuple(cmt_row))
-    c.commit()
+    conn.commit()
 
 ## Main <-------------------
 subreddits = getsubs("")
